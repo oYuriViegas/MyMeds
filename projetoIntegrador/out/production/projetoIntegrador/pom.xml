@@ -1,0 +1,12 @@
+<!-- Apache HttpClient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.13</version> <!-- Verifique a versão mais recente no repositório Maven -->
+
+
+        <!-- JSON -->
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20210307</version> <!-- Verifique a versão mais recente no repositório Maven -->
+</dependency>
