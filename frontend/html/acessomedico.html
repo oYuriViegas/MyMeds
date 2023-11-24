@@ -14,55 +14,51 @@
       </header>
 
       <div class="bluebox">
-        <table>
-          <thead>
-            <tr>
-              <th>NOME DO PACIENTE</th>
-              <th>IDADE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!---INFORMACOES ENTRAM AQUI-->
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              <th>REMÉDIOS RECEITADOS</th>
-              <th>MÉDICO</th>
-              <th>FREQUÊNCIA</th>
-              <th>INTERVALO</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!---INFORMACOES ENTRAM AQUI-->
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              <th>REMÉDIOS ANTERIORES</th>
-              <th>MÉDICO</th>
-              <th>FREQUÊNCIA</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!---INFORMACOES ENTRAM AQUI-->
-          </tbody>
-        </table>
-        <div class="button-organizer">
-          <button class="button-white">Atualizar medicamento</button>
-          <button class="button-blue">Adicionar novo medicamento</button>
-        </div>
-        <div>
-          <h3>ADICIONAR MEDICAMENTO:</h3>
-          <div class="Formlabel">
-            <label for="nomeremedio">Nome do remédio:</label>
-            <label for="miligramagem">Miligramagem:</label>
-            <label for="frequencia">Frequência:</label>
-            <label for="intervalo">Intervalo:</label>
+        <div class="halfbox">
+          <table>
+            <thead>
+              <tr>
+                <th>NOME DO PACIENTE</th>
+                <th>IDADE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!---INFORMACOES ENTRAM AQUI-->
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th>REMÉDIOS RECEITADOS</th>
+                <th>MÉDICO</th>
+                <th>FREQUÊNCIA</th>
+                <th>INTERVALO</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!---INFORMACOES ENTRAM AQUI-->
+            </tbody>
+          </table>
+          <table>
+            <thead>
+              <tr>
+                <th>REMÉDIOS ANTERIORES</th>
+                <th>MÉDICO</th>
+                <th>FREQUÊNCIA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!---INFORMACOES ENTRAM AQUI-->
+            </tbody>
+          </table>
+          <div class="button-organizer">
+            <button class="button-white">Atualizar medicamento</button>
+            <button class="button-blue">Adicionar novo medicamento</button>
           </div>
-          <div class="Forminput">
+        </div>
+        <div class="container-form">
+          <h3>ADICIONAR MEDICAMENTO:</h3>
+          <div class="form-field">
             <input
               type="text"
               id="nomeremedio"
@@ -78,13 +74,13 @@
               required
             />
             <input
-              type="frequencia"
+              type="text"
               id="frequencia"
               name="frequencia"
               placeholder="Frequência"
             />
             <input
-              type="intervalo"
+              type="text"
               id="intervalo"
               name="intervalo"
               placeholder="Intervalo em hrs"
