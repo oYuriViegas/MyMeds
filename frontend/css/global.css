@@ -11,22 +11,17 @@ form {
   padding: 0;
 }
 
-thead {
-  color: #000;
+table {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.th-alt {
   font-size: 1.25rem;
-  font-weight: 600;
-}
-
-tbody {
-  color: var(--dark-dark-1, #3a3a3c);
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.tables {
-  display: flex;
-  justify-content: left;
-  padding-bottom: 0.25rem;
 }
 
 h3 {
