@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyMeds | Ficha Médica</title>
+    <link rel="stylesheet" href="..\css\global.css" />
+  </head>
+  <body>
+    <div class="body-container">
+      <header>
+        <h1>MyMeds</h1>
+        <p>O melhor contato médico-paciente</p>
+      </header>
+
+      <div class="bluebox-alt">
+        <div class="halfbox">
+          <div class="tables">
+            <table>
+              <tbody>
+                <!---INFORMACOES ENTRAM AQUI-->
+              </tbody>
+            </table>
+          </div>
+          <div class="tables">
+            <table>
+              <thead>
+                <tr>
+                  <th class="th-alt">REMÉDIOS RECEITADOS</th>
+                  <th class="th-alt">FREQUÊNCIA</th>
+                  <th class="th-alt">INTERVALO</th>
+                </tr>
+              </thead>
+              <tbody class="table-info">
+                <!---INFORMACOES ENTRAM AQUI-->
+              </tbody>
+            </table>
+          </div>
+          <div class="tables">
+            <table>
+              <thead>
+                <tr>
+                  <th class="th-alt">REMÉDIOS ANTERIORES</th>
+                  <th class="th-alt">FREQUÊNCIA</th>
+                </tr>
+              </thead>
+              <tbody class="table-info">
+                <!---INFORMACOES ENTRAM AQUI-->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="container-form">
+          <h3>ADICIONAR MEDICAMENTO:</h3>
+          <div class="form-field">
+            <input
+              type="text"
+              id="nomeremedio"
+              name="nomeremedio"
+              placeholder="Remédio"
+              required
+            />
+            <input
+              type="text"
+              id="miligramagem"
+              name="miligramagem"
+              placeholder="MILIGRAMAGEM"
+              required
+            />
+            <input
+              type="text"
+              id="frequencia"
+              name="frequencia"
+              placeholder="Frequência"
+            />
+            <input
+              type="text"
+              id="intervalo"
+              name="intervalo"
+              placeholder="Intervalo em hrs"
+            />
+          </div>
+          <div class="blue2">
+            <button class="button-blue2">Adicionar novo medicamento</button>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <h2 class="footer-heading">Fale conosco:</h2>
+          <input
+            type="email"
+            class="footer-input"
+            placeholder="Email"
+            required
+          />
+          <div class="textarea-button">
+            <textarea
+              class="footer-textarea"
+              placeholder="Mensagem..."
+            ></textarea>
+            <button type="submit" class="footer-button">Enviar</button>
+          </div>
+          <p class="footer-text">
+            &copy; 2023 MyMeds. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
