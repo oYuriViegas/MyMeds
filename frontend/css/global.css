@@ -21,7 +21,14 @@ th {
 }
 
 .th-alt {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+}
+
+.table-info {
+  color: #3a3a3c;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
 }
 
 h3 {
@@ -65,7 +72,15 @@ header p {
 
 .bluebox {
   width: 1041px;
-  height: 33rem;
+  height: 30rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--primary-lighter, #9bf);
+  background: #e3edff;
+}
+
+.bluebox-alt {
+  width: 1041px;
+  height: 40rem;
   border-radius: 0.625rem;
   border: 1px solid var(--primary-lighter, #9bf);
   background: #e3edff;
