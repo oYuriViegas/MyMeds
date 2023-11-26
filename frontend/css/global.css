@@ -74,7 +74,7 @@ header p {
   width: 1041px;
   height: 30rem;
   border-radius: 0.625rem;
-  border: 1px solid var(--primary-lighter, rgb(86, 95, 114));
+  border: 1px solid var(--primary-lighter, #9bf);
   background: #e3edff;
   position: relative;
   right: 70px;
