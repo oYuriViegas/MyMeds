@@ -49,7 +49,7 @@ body {
 header {
   position: relative;
   top: 1.5rem;
-  right: 24rem;
+  right: 29rem;
   margin-bottom: 2.5rem;
 }
 
@@ -77,7 +77,7 @@ header p {
   border: 1px solid var(--primary-lighter, #9bf);
   background: #e3edff;
   position: relative;
-  right: 70px;
+  right: 5rem;
   
 }
 
@@ -87,6 +87,8 @@ header p {
   border-radius: 0.625rem;
   border: 1px solid var(--primary-lighter, #9bf);
   background: #e3edff;
+  position: relative;
+  right: 5rem;
 }
 
 .halfbox {
