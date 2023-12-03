@@ -76,11 +76,18 @@ header p {
   border-radius: 0.625rem;
   border: 1px solid var(--primary-lighter, #9bf);
   background: #e3edff;
-<<<<<<< Updated upstream:frontend/css/global.css
-=======
   position: relative;
   right: 5rem;
->>>>>>> Stashed changes:web/css/global.css
+}
+
+.bluebox-1 {
+  width: 1041px;
+  height: 47.5rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--primary-lighter, #9bf);
+  background: #e3edff;
+  position: relative;
+  right: 5rem;
 }
 
 .bluebox-alt {
@@ -164,6 +171,7 @@ header p {
 
 input[type="text"],
 input[type="password"],
+input[type="email"],
 select {
   width: 10rem;
   padding: 0.625rem;
@@ -339,20 +347,38 @@ select {
   display: flex;
   justify-content: center;
   width: 20.5rem;
-  height: 17rem;
+  height: 18rem;
   padding: 2.1875rem 2.5rem;
-  gap: 1.25rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 0.625rem;
-}
-
-.label-choice {
-  display: flex;
-  justify-content: space-around;
-  color: #3377ff;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card1:hover {
+  background-color: rgba(153, 187, 255, 0.418);
+  cursor: pointer;
+}
+
+.choice-img {
+  display: flex;
+  justify-content: center;
+}
+
+.card2 {
+  display: flex;
+  justify-content: center;
+  width: 20.5rem;
+  height: 18rem;
+  padding: 2.1875rem 2.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0.625rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.card2:hover {
   background-color: rgba(153, 187, 255, 0.418);
   cursor: pointer;
 }
