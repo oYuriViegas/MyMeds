@@ -1,3 +1,7 @@
+import { getRemedios } from "./api-paciente";
+
+const remediosTableBody = document.querySelector('#pacientesTableBody');
+
 function handlePatientRegistrationInputs() {
   let nome = document.getElementById('nome').value;
   let email = document.getElementById('email').value;
@@ -9,7 +13,7 @@ function handlePatientRegistrationInputs() {
     senha: senha
   };
   console.log(dadosPaciente);
-  fetch('http://api.mymeds.com/pacientes', {
+  fetch('http://localhost:8080/pacientes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -23,3 +27,14 @@ function handlePatientRegistrationInputs() {
   });
 }
 
+function loadRemedios(id) {
+  getRemedios(id)
+  .then((remedios) => {
+      console.log(remedios);
+      remediosTableBody.innerHTML = '';
+      response.data.array.forEach(remedio => {
+        remediosTableBody.appendChild(remedio);
+      });
+    })
+    .catch((error) => { console.error('Falha ao carregar remédios:', error); });
+}

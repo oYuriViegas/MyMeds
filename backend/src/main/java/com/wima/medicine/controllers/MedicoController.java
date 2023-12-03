@@ -7,12 +7,17 @@ import com.wima.medicine.models.Medico;
 import com.wima.medicine.repositories.MedicoRepository;
 import com.wima.medicine.repositories.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+import java.net.*;
+import java.io.*;
 
 @RestController
 @RequestMapping("/medicos")
@@ -49,12 +54,32 @@ public class MedicoController {
 
     @PostMapping
     public ResponseEntity create(@RequestBody Medico medico) {
-        final Medico validated = this.medicoService.registerByCrm(medico);
-        if (Objects.isNull(validated)) {
-            return ResponseEntity.badRequest().body("Falha ao validar CRM ou registro em duplicidade");
+
+        try {
+            Socket conexao = new Socket("localhost",69420);
+
+            ObjectOutputStream transmissor = new ObjectOutputStream(conexao.getOutputStream());
+
+            ObjectInputStream receptor = new ObjectInputStream(conexao.getInputStream());
+
+            transmissor.writeObject(medico);
+            transmissor.flush();
+
+            Medico validated = null;
+            try {
+                validated = (Medico) receptor.readObject();
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            if (Objects.isNull(validated)) {
+                return ResponseEntity.badRequest().body("Falha ao validar CRM ou registro em duplicidade");
+            }
+            final Medico saved = this.repository.save(medico);
+            return ResponseEntity.ok(MedicoDto.fromEntity(saved));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
-        final Medico saved = this.repository.save(validated);
-        return ResponseEntity.ok(MedicoDto.fromEntity(saved));
+
     }
 
 }
