@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyMeds | Cadastro</title>
+    <link rel="stylesheet" href="..\css\global.css" />
+    <script src="../script.js"></script>
+  </head>
+  <body>
+    <div class="body-container">
+      <header>
+        <h1>MyMeds</h1>
+        <p>O melhor contato médico-paciente</p>
+      </header>
+
+      <div class="bluebox">
+        <h2>Qual destes é você?</h2>
+        <div class="label-choice">
+          <h2>Médico</h2>
+          <h2>Paciente</h2>
+        </div>
+        <div class="img-organizer">
+          <a href="..\html\cadastromedico.html">
+            <div class="card1">
+              <img class="img-med" src="..\images\medico.png" />
+            </div>
+          </a>
+          <a href="..\html\cadastropaciente.html">
+            <div class="card1">
+              <img class="img-pac" src="..\images\paciente.png" />
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <h2 class="footer-heading">Fale conosco:</h2>
+          <input
+            type="email"
+            class="footer-input"
+            placeholder="Email"
+            required
+          />
+          <div class="textarea-button">
+            <textarea
+              class="footer-textarea"
+              placeholder="Mensagem..."
+            ></textarea>
+            <button type="submit" class="footer-button">Enviar</button>
+          </div>
+          <p class="footer-text">
+            &copy; 2023 MyMeds. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
