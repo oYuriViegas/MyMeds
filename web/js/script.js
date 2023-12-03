@@ -16,22 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
             hasError = true;
         }
 
-        // Validar CPF - apenas números e deve ter 11 caracteres
-        if (cpfInput.value.trim().length !== 11 || !/^\d+$/.test(cpfInput.value)) {
-            if (cpfInput.value.trim().length !== 11) {
-                errorMessage += 'O CPF deve conter 11 números.\n';
-            } else {
-                errorMessage += 'O CPF deve conter apenas números.\n';
-            }
-            hasError = true;
-        }
-
-        // Validar UF - não deve ser a opção padrão
-        if (ufSelect.value === 'default' || ufSelect.value === 'Selecione') {
-            errorMessage += 'Por favor, selecione seu estado da lista.\n';
-            hasError = true;
-        }
-
         // Validar senha - deve ter mais de 6 caracteres
         if (senhaInput.value.trim().length <= 6) {
             errorMessage += 'A senha deve conter mais de 6 caracteres.\n';

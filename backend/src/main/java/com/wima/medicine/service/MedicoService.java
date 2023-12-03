@@ -19,7 +19,6 @@ import java.util.Objects;
 @Component
 public class MedicoService {
     //servidor aqui
-
     @Autowired
     private RestTemplate restTemplate;
 
