@@ -17,8 +17,12 @@
         <div class="halfbox">
           <div class="tables">
             <table>
-              <tbody>
-                <!---INFORMACOES ENTRAM AQUI-->
+              <tbody class="table-info" id="pacientesTableBody">
+              <select name="selectPacientes" id="Select">
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
               </tbody>
             </table>
           </div>
@@ -27,12 +31,13 @@
               <thead>
                 <tr>
                   <th class="th-alt">REMÉDIOS RECEITADOS</th>
+                  <th class="th-alt">MILIGRAMAGEM</th>
                   <th class="th-alt">FREQUÊNCIA</th>
                   <th class="th-alt">INTERVALO</th>
                 </tr>
               </thead>
-              <tbody class="table-info">
-                <!---INFORMACOES ENTRAM AQUI-->
+              <tbody class="table-info" id="remediosTableBody">
+                <!---INFORMACOES ENTRAM AQUI remedios receitados-->
               </tbody>
             </table>
           </div>
@@ -41,11 +46,12 @@
               <thead>
                 <tr>
                   <th class="th-alt">REMÉDIOS ANTERIORES</th>
+                  <th class="th-alt">MILIGRAMAGEM</th>
                   <th class="th-alt">FREQUÊNCIA</th>
                 </tr>
               </thead>
-              <tbody class="table-info">
-                <!---INFORMACOES ENTRAM AQUI-->
+              <tbody class="table-info id=remediosAnterioresTableBody">
+                <!---INFORMACOES ENTRAM AQUI remedios anteriores-->
               </tbody>
             </table>
           </div>
@@ -108,5 +114,6 @@
         </div>
       </footer>
     </div>
+    <script src="..js/script-med.js"></script>
   </body>
 </html>

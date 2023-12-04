@@ -1,7 +1,3 @@
-import { getRemedios } from "./api-paciente";
-
-const remediosTableBody = document.querySelector('#pacientesTableBody');
-
 function handlePatientRegistrationInputs() {
   let nome = document.getElementById('nome').value;
   let email = document.getElementById('email').value;
@@ -26,15 +22,32 @@ function handlePatientRegistrationInputs() {
     console.error('Error:', error);
   });
 }
-
-function loadRemedios(id) {
-  getRemedios(id)
-  .then((remedios) => {
-      console.log(remedios);
-      remediosTableBody.innerHTML = '';
-      response.data.array.forEach(remedio => {
-        remediosTableBody.appendChild(remedio);
-      });
-    })
-    .catch((error) => { console.error('Falha ao carregar remédios:', error); });
+function handleLoginInputs() {
+  let email = document.getElementById('email').value;
+  let senha = document.getElementById('senha').value;
+  
+  let dadosLogin = {
+    email: email,
+    senha: senha
+  };
+  console.log(dadosLogin);
+  fetch('http://localhost:8080/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dadosLogin)
+  })
+  .then(response => {
+    if(response.status === 200) {
+      window.location.href = '/home';
+    } else {
+      console.error('Erro de login');
+    }
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 }
+
+

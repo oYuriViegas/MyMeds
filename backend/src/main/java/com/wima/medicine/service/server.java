@@ -1,12 +1,10 @@
-package com.wima.medicine.server;
+package com.wima.medicine.service;
 
-import java.io.*;
-import java.net.*;
 import java.util.ArrayList;
 
 public class server extends Thread {
 
-    public static void main(String[] args) {
+    public static void main() {
 
         ArrayList<connectionHandler> tratadorasDeConexao = new ArrayList<connectionHandler>();
 

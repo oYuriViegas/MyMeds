@@ -1,23 +1,19 @@
 package com.wima.medicine.controllers;
 
-import com.wima.medicine.service.MedicoService;
 import com.wima.medicine.dto.MedicoDto;
 import com.wima.medicine.dto.PacienteDto;
 import com.wima.medicine.models.Medico;
 import com.wima.medicine.repositories.MedicoRepository;
 import com.wima.medicine.repositories.PacienteRepository;
+import com.wima.medicine.service.Cliente;
+import com.wima.medicine.service.MedicoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-
-import java.net.*;
-import java.io.*;
 
 @RestController
 @RequestMapping("/medicos")
@@ -54,32 +50,26 @@ public class MedicoController {
 
     @PostMapping
     public ResponseEntity create(@RequestBody Medico medico) {
+        Medico validated = Cliente.main(medico);
+        System.out.println("Consulta recebida.");
 
-        try {
-            Socket conexao = new Socket("localhost",69420);
-
-            ObjectOutputStream transmissor = new ObjectOutputStream(conexao.getOutputStream());
-
-            ObjectInputStream receptor = new ObjectInputStream(conexao.getInputStream());
-
-            transmissor.writeObject(medico);
-            transmissor.flush();
-
-            Medico validated = null;
-            try {
-                validated = (Medico) receptor.readObject();
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
-            if (Objects.isNull(validated)) {
-                return ResponseEntity.badRequest().body("Falha ao validar CRM ou registro em duplicidade");
-            }
-            final Medico saved = this.repository.save(medico);
-            return ResponseEntity.ok(MedicoDto.fromEntity(saved));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (Objects.isNull(validated)) {
+            return ResponseEntity.badRequest().body("Falha ao validar CRM ou registro em duplicidade");
         }
-
+        final Medico saved = this.repository.save(medico);
+        return ResponseEntity.ok(MedicoDto.fromEntity(saved));
     }
+    @PostMapping("/verificarCredenciais")
+    public ResponseEntity<String> verificarCredenciais(@RequestBody Map<String, String> credenciais) {
+        String crm = credenciais.get("crm");
+        String senha = credenciais.get("senha");
 
+        Medico medico = repository.findByCrmAndSenha(crm, senha);
+
+        if (medico != null) {
+            return ResponseEntity.ok(medico.getId());
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
 }
+

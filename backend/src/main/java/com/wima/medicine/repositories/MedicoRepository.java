@@ -8,4 +8,5 @@ import java.util.List;
 public interface MedicoRepository extends MongoRepository<Medico, String> {
     public Medico findByCrmAndUf(String crm, String uf);
 
+    public Medico findByCrmAndSenha(String crm, String senha);
 }
