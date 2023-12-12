@@ -1,7 +1,6 @@
 package com.wima.medicine.controllers;
 
-import com.wima.medicine.dto.CreatePacienteDto;
-import com.wima.medicine.dto.PacienteDto;
+import com.wima.medicine.dto.*;
 import com.wima.medicine.models.Medico;
 import com.wima.medicine.models.Paciente;
 import com.wima.medicine.models.Remedios;
@@ -46,11 +45,23 @@ public class PacienteController {
         return ResponseEntity.ok(this.remediosRepository.findByPacienteId(pacientId));
     }
 
+    @PostMapping("/login")
+    public ResponseEntity login(@RequestBody PacienteLoginDto loginDto) {
+        final Paciente paciente = this.repository.findByEmail(loginDto.getEmail());
+        if (Objects.isNull(paciente)) {
+            return ResponseEntity.badRequest().body("Paciente não encontrado");
+        }
+        if (Objects.nonNull(paciente) && !Objects.equals(paciente.getSenha(), loginDto.getSenha())) {
+            return ResponseEntity.badRequest().body("Credenciais inválidas");
+        }
+        return ResponseEntity.ok(PacienteDto.fromEntity(paciente));
+    }
+
     @PostMapping
-    public ResponseEntity<PacienteDto> create(@RequestBody CreatePacienteDto paciente) {
+    public ResponseEntity<Object> create(@RequestBody CreatePacienteDto paciente) {
         final Medico medico = this.medicosRepository.findByCrm(paciente.getCrm());
         if(Objects.isNull(medico)){
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.badRequest().body("Médico não encontrado");
         }
         final Paciente.PacienteBuilder pacienteBuilder = CreatePacienteDto.getPacienteBuilder(paciente).medicoId(medico.getId());
         final Paciente saved = this.repository.save(pacienteBuilder.build());

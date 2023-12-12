@@ -20,6 +20,7 @@ public class CreatePacienteDto {
     public static Paciente.PacienteBuilder getPacienteBuilder(CreatePacienteDto entity) {
         return Paciente.builder()
                 .email(entity.getEmail())
+                .senha(entity.getSenha())
                 .nome(entity.getNome());
     }
 }

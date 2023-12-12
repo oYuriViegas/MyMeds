@@ -16,13 +16,4 @@ public class MedicineApplication {
 		SpringApplication.run(MedicineApplication.class, args);
 		server.main();
 	}
-
-	@Bean
-	public RestTemplate restTemplate() {
-		RestTemplate restTemplate = new RestTemplate();
-		MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
-		converter.setObjectMapper(new ObjectMapper());
-		restTemplate.getMessageConverters().add(converter);
-		return restTemplate;
-	}
 }

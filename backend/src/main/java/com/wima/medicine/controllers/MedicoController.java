@@ -1,6 +1,7 @@
 package com.wima.medicine.controllers;
 
 import com.wima.medicine.dto.MedicoDto;
+import com.wima.medicine.dto.MedicoLoginDto;
 import com.wima.medicine.dto.PacienteDto;
 import com.wima.medicine.models.Medico;
 import com.wima.medicine.repositories.MedicoRepository;
@@ -45,6 +46,18 @@ public class MedicoController {
                         .map(PacienteDto::fromEntity)
                         .collect(Collectors.toList())
         );
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity login(@RequestBody MedicoLoginDto loginDto) {
+        final Medico medico = this.repository.findByCrm(loginDto.getCrm());
+        if (Objects.isNull(medico)) {
+            return ResponseEntity.badRequest().body("Médico não encontrado");
+        }
+        if (Objects.nonNull(medico) && !Objects.equals(medico.getSenha(), loginDto.getSenha())) {
+            return ResponseEntity.badRequest().body("Credenciais inválidas");
+        }
+        return ResponseEntity.ok(MedicoDto.fromEntity(medico));
     }
 
     @PostMapping

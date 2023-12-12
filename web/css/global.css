@@ -457,3 +457,7 @@ footer {
   color: #666;
   font-size: 0.875rem;
 }
+
+.select-paciente {
+  width: 200px;
+}

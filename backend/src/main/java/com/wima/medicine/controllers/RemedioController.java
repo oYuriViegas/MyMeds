@@ -22,6 +22,11 @@ public class RemedioController {
         return ResponseEntity.ok(this.repository.findAll());
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<Remedios> findOne(@PathVariable("id") String id) {
+        return ResponseEntity.ok(this.repository.findById(id).get());
+    }
+
     @PostMapping
     public ResponseEntity<Remedios> create(@RequestBody Remedios remedios) {
         return ResponseEntity.ok(this.repository.insert(remedios));

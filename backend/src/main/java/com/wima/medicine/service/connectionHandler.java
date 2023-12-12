@@ -21,10 +21,11 @@ public class connectionHandler extends Thread{
 
             Medico medico;
             medico = (Medico) receptor.readObject();
-            System.out.println("Medico recebido");
+            System.out.println("Medico recebido no servidor");
 
             MedicoService service = new MedicoService();
             final Medico validated = service.registerByCrm(medico);
+            System.out.println("Consulta iniciada!");
             transmissor.writeObject(validated);
 
             transmissor.close();

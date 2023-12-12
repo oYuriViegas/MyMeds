@@ -6,7 +6,7 @@
     <title>MyMeds | Cadastro</title>
     <link rel="stylesheet" href="..\css\global.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/script-paciente.js"></script>
+    <script src="../controllers/cadastroPacienteController.js"></script>
   </head>
   <body>
     <div class="body-container">
@@ -22,11 +22,13 @@
             <li>1</li>
             <li>2</li>
             <li>3</li>
+            <li>4</li>
           </ul>
           <div class="Formlabel">
             <label for="nome">Digite seu nome:</label>
             <label for="email">Digite seu e-mail:</label>
             <label for="senha">Senha:</label>
+            <label for="crm">CRM do médico:</label>
           </div>
 
           <div class="Forminput">
@@ -47,7 +49,7 @@
             />
 
             <input
-              type="number"
+              type="text"
               id="crm" 
               name="crm" 
               placeholder="CRM" 

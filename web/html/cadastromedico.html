@@ -6,7 +6,7 @@
     <title>MyMeds | Cadastro</title>
     <link rel="stylesheet" href="..\css\global.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="../js/script-medico.js"></script>
+    <script src="../controllers/cadastroMedicoController.js"></script>
   </head>
   <body>
     <div class="body-container">
@@ -71,8 +71,7 @@
               placeholder="Senha"
             />
 
-            <button class="acesso" onclick="handleDoctorRegistrationInputs(event)">Finalizar</button>
-            
+            <button id="btn-submit-register" class="acesso" onclick="handleDoctorRegistrationInputs(event)">Finalizar</button>
           </div>
           </div>
         </form>

@@ -1,4 +1,4 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://medicine:medicinepuc@cluster0.cfyfl.mongodb.net/medicine
+      uri: mongodb+srv://lucasgiazzi:mateus@cluster0.4aejbqq.mongodb.net/MyMeds

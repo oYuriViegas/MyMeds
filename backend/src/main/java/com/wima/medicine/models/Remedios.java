@@ -19,6 +19,6 @@ public class Remedios {
     private String miligramagem;
     private String intervalo;
     private String frequencia;
-    private boolean emUso;
+    private boolean emUso = true;
 
 }

@@ -11,7 +11,7 @@ function handlePatientRegistrationInputs(event) {
     senha: senha,
     crm: crm
   };
-  
+
   console.log(dadosPaciente);
   let url = 'http://localhost:8080/pacientes';
   axios.post(url, dadosPaciente)
@@ -35,6 +35,7 @@ function handleLoginInputs() {
     senha: senha
   };
   console.log(dadosLogin);
+  
   fetch('http://localhost:8080/login', {
     method: 'POST',
     headers: {

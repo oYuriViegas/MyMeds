@@ -20,17 +20,11 @@ import java.util.Objects;
 
 public class MedicoService {
 
-
     private static final String ROOT_API = "https://api.infosimples.com/api/v2/consultas/cfm/cadastro?inscricao=%s&uf=%s&token={token}&timeout=300";
 
     public Medico registerByCrm(Medico medico) throws URISyntaxException, IOException, InterruptedException {
         final String crm = medico.getCrm();
         final String uf = medico.getUf();
-        // var existsDoctor = this.repository.findByCrmAndUf(crm, uf);
-
-//        if (Objects.nonNull(existsDoctor)) {
-//            return null;
-//        }
 
         final String uri = String.format(ROOT_API, crm, uf);
 
@@ -44,7 +38,7 @@ public class MedicoService {
         HttpResponse<String> response =
                 client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        if (response.statusCode()>=400) {
+        if (response.statusCode() >= 400) {
             return null;
         }
 

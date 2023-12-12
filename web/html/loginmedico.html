@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyMeds | Login - Médico</title>
     <link rel="stylesheet" href="..\css\global.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../controllers/loginMedicoController.js"></script>
   </head>
   <body>
     <div class="body-container">
@@ -35,9 +37,8 @@
               placeholder="Senha"
               required
             />
-            <a href="..\html\acessomedico.html">
-              <button class="acesso" type="submit">Acessar sistema</button>
-            </a>
+            
+            <button class="acesso" onclick="handleLoginInputs(event)">Acessar sistema</button>
           </div>
         </form>
       </div>
