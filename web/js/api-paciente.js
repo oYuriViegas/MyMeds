@@ -4,4 +4,4 @@ function getRemedios(id){
     return axios.get(`${apiBaseUrl}/${id}/remedios`);
 }
 
-export{getRemedios};
+export{getRemedios}

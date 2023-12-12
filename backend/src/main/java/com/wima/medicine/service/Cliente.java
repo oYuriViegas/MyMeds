@@ -4,7 +4,7 @@ import com.wima.medicine.models.*;
 
 import java.io.*;
 import java.net.*;
-
+//isso deveria ser o frontend
 public class Cliente {
     public static Medico main(Medico medico) {
         try {
@@ -21,14 +21,13 @@ public class Cliente {
             System.out.println("Medico enviado");
 
 
-            Medico validated = null;
             try {
-                validated = (Medico) receptor.readObject();
+                return (Medico) receptor.readObject();
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }
-            return validated;
-        } catch (Exception ignored) {}
-        return null;
+        } catch (Exception ignored) {
+            return null;
+        }
     }
 }

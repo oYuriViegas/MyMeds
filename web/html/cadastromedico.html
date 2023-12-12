@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyMeds | Cadastro</title>
     <link rel="stylesheet" href="..\css\global.css" />
-    <script src="../script.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/script-medico.js"></script>
   </head>
   <body>
     <div class="body-container">
@@ -29,7 +30,7 @@
           </div>
 
         
-
+          <div class="Forminput">
             <input type="text" id="crm" name="crm" placeholder="CRM" />
           
 
@@ -69,11 +70,10 @@
               name="senha"
               placeholder="Senha"
             />
-          
 
-            <a href="..\html\index.html">
-              <button class="acesso" type="submit">Finalizar</button>
-            </a>
+            <button class="acesso" onclick="handleDoctorRegistrationInputs(event)">Finalizar</button>
+            
+          </div>
           </div>
         </form>
       </div>

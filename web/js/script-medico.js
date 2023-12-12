@@ -1,9 +1,7 @@
-import {getPacientes} from './api-paciente'
-import {getRemedios} from './remedios'
-
 const pacientesTableBody = document.querySelector('#pacientesTableBody');
 
-function handleDoctorRegistrationInputs() {
+function handleDoctorRegistrationInputs(event) {
+  event.preventDefault();
   let senha = document.getElementById('senha').value;
   let crm = document.getElementById('crm').value;
   let uf = document.getElementById('uf').value;
@@ -14,18 +12,17 @@ function handleDoctorRegistrationInputs() {
     "uf": uf
   };
   console.log(dadosDoctor);
-  fetch('http://localhost:8080/medicos', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: dadosDoctor.json
-  })
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+  let url = 'http://localhost:8080/medicos';
+  // axios.post(url, dadosDoctor)
+  // .then(response => {
+  //   console.log(response.data);
+  //   window.location.replace('/acessomedico.html')
+  // })
+  // .catch(error => {
+  //   console.error('Error:', error);
+  // });
+  window.location.replace('/web/html/acessomedico.html')
+
 }
 
 function loadPacientes(idMedico) {

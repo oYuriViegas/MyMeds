@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/remedios")
+@CrossOrigin("*")
 public class RemedioController {
 
     @Autowired

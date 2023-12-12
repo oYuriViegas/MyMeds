@@ -20,21 +20,20 @@ public class connectionAcceptor extends Thread {
         ServerSocket pedido = null;
         try {
             pedido = new ServerSocket(2424);
-        } catch (IOException e) {
-            System.err.println("erro");
-            throw new RuntimeException(e);
-        }
 
-        for(;;){
-            try {
-                Socket conexao = pedido.accept();
-                this.tratadoras.add(new connectionHandler(conexao));
-                this.tratadoras.get(this.tratadoras.size()-1).start();
-                System.out.println("Conexão aberta na porta 2424");
-            } catch (Exception e) {
-                System.err.println("erro");
+            for(;;){
+                try {
+                    Socket conexao = pedido.accept();
+                    this.tratadoras.add(new connectionHandler(conexao));
+                    this.tratadoras.get(this.tratadoras.size()-1).start();
+                    System.out.println("Conexão aberta na porta 2424");
+                } catch (Exception e) {
+                    System.err.println("erro");
+                }
             }
-        }
+        } catch (IOException e) {
+        throw new RuntimeException(e);
+    }
     }
 
 

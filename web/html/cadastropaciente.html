@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyMeds | Cadastro</title>
     <link rel="stylesheet" href="..\css\global.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/script-paciente.js"></script>
   </head>
   <body>
     <div class="body-container">
@@ -44,11 +45,14 @@
               name="senha"
               placeholder="Senha"
             />
-            
 
-            <a href="..\html\index.html">
-              <button class="acesso" type="submit">Finalizar</button>
-            </a>
+            <input
+              type="number"
+              id="crm" 
+              name="crm" 
+              placeholder="CRM" 
+            />
+            <button class="acesso" onclick="handlePatientRegistrationInputs(event)">Finalizar</button>
           </div>
         </form>
       </div>
@@ -61,6 +65,7 @@
             class="footer-input"
             placeholder="Email"
             required
+            id="emailFC"></input>
           />
           <div class="textarea-button">
             <textarea
@@ -75,7 +80,6 @@
         </div>
       </footer>
     </div>
-    <script src="../js/api-paciente.js"></script>
-    <script src="../js/script-paciente.js"></script>
+    
   </body>
 </html>

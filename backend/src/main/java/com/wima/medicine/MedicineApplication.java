@@ -25,5 +25,4 @@ public class MedicineApplication {
 		restTemplate.getMessageConverters().add(converter);
 		return restTemplate;
 	}
-
 }
