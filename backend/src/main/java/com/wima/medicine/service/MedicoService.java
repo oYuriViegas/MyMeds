@@ -20,7 +20,7 @@ import java.util.Objects;
 
 public class MedicoService {
 
-    private static final String ROOT_API = "https://api.infosimples.com/api/v2/consultas/cfm/cadastro?inscricao=%s&uf=%s&token={token}&timeout=300";
+    private static final String ROOT_API = "https://api.infosimples.com/api/v2/consultas/cfm/cadastro?inscricao=%s&uf=%s&token=NdHL3eDFZIApnc3MbBOLBiltfwc3IruafkncITqf&timeout=300";
 
     public Medico registerByCrm(Medico medico) throws URISyntaxException, IOException, InterruptedException {
         final String crm = medico.getCrm();
@@ -28,6 +28,7 @@ public class MedicoService {
 
         final String uri = String.format(ROOT_API, crm, uf);
 
+        //usando o método HTTP do próprio java
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(uri))
@@ -35,6 +36,8 @@ public class MedicoService {
                 .GET()
                 .build();
 
+
+        //manda o request para a api e salva na var response
         HttpResponse<String> response =
                 client.send(request, HttpResponse.BodyHandlers.ofString());
 

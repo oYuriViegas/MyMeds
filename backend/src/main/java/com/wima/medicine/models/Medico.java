@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
+//lombok
 @Getter
 @Setter
 @Builder

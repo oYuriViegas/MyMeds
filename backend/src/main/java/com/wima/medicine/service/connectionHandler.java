@@ -19,13 +19,12 @@ public class connectionHandler extends Thread{
             ObjectOutputStream transmissor = new ObjectOutputStream(conexao.getOutputStream());
             ObjectInputStream receptor = new ObjectInputStream(conexao.getInputStream());
 
-            Medico medico;
-            medico = (Medico) receptor.readObject();
+            Medico medico = (Medico) receptor.readObject();
             System.out.println("Medico recebido no servidor");
 
             MedicoService service = new MedicoService();
             final Medico validated = service.registerByCrm(medico);
-            System.out.println("Consulta iniciada!");
+            System.out.println("Consulta realizada!");
             transmissor.writeObject(validated);
 
             transmissor.close();
